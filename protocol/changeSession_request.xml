@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Body>
+    <ns1:changeSession xmlns:ns1="http://sms.am.tivoli.com">
+      <ns1:replica>dsc-webseald-testisam</ns1:replica>
+      <ns1:replicaSet>default</ns1:replicaSet>
+      <ns1:sessionID>nVtzCihxpBGCyjmcP/M60V1DSR3AcHQS0HrSmhx/bkaxc1DFyIQ=</ns1:sessionID>
+      <ns1:version>0</ns1:version>
+      <ns1:push>false</ns1:push>
+      <ns1:sessionLimit>0</ns1:sessionLimit>
+      <ns1:data>
+        <ns1:value>true</ns1:value>
+        <ns1:dataClass>com.tivoli.am.webseal.lifetime-extended</ns1:dataClass>
+        <ns1:instance>webseal</ns1:instance>
+        <ns1:changePolicy>1</ns1:changePolicy>
+      </ns1:data>
+    </ns1:changeSession>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

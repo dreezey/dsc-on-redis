@@ -69,6 +69,11 @@ def dsess_runtime():
         debug_message('terminateSession')
         debug_message(tostring(root))
         response_body = terminate_session(action)
+    elif 'changeSession'.lower() in soap_action:
+        debug_message('changeSession')
+        debug_message(tostring(root))
+        response_body = change_session(action)
+        debug_message(tostring(response_body))
     else:
         debug_message("Unknown operation: " + soap_action)
         # debug_message(action.tag)
@@ -275,7 +280,7 @@ def create_session(body):
     for data in body.findall('{http://sms.am.tivoli.com}data'):
         data_class = data.find('{http://sms.am.tivoli.com}dataClass').text
         # Store in Redis, this is based on session_id and 'data_class'
-        redis_session_add_attribute(session_id, data_class, data)
+        redis_session_add_or_modify_attribute(session_id, data_class, data)
 
     # Persist the session in Redis here
     redis_create_session(replica_set, session_id)
@@ -306,12 +311,56 @@ def create_session(body):
     return envelope_soap_body(create_session_response)
 
 
+# This seems to be invoked when performing a stepup, or password is expired, or ... ? I think this is the "update"
+# session, although WebSEAL will invoke a terminateSession and invoke createSession to "update" a session, so not sure.
+def change_session(body):
+    replica = body.find('{http://sms.am.tivoli.com}replica').text
+    debug_message('replica: ' + replica)
+    replica_set = body.find('{http://sms.am.tivoli.com}replicaSet').text
+    debug_message('replicaSet: ' + replica_set)
+    session_id = body.find('{http://sms.am.tivoli.com}sessionID').text
+    debug_message('sessionID: ' + session_id)
+    session_limit = body.find('{http://sms.am.tivoli.com}sessionLimit').text
+    debug_message('sessionLimit: ' + session_limit)
+
+    # Loop over every 'data' credential attribute, and store it in Redis
+    for data in body.findall('{http://sms.am.tivoli.com}data'):
+        data_class = data.find('{http://sms.am.tivoli.com}dataClass').text
+        # Store in Redis, this is based on session_id and 'data_class'
+        redis_session_add_or_modify_attribute(session_id, data_class, data)
+
+    # The rest is static values
+    change_session_response = Element('ns1:changeSessionResponse')
+    change_session_response.set('xmlns:ns1', "http://sms.am.tivoli.com")
+
+    change_session_return = Element('ns1:changeSessionReturn')
+
+    result = Element('ns1:result')
+    result.text = '952467756'
+    change_session_return.append(result)
+
+    version = Element('ns1:version')
+    version.text = '1'
+    change_session_return.append(version)
+
+    stack_depth = Element('ns1:stackDepth')
+    stack_depth.text = '1'
+    change_session_return.append(stack_depth)
+
+    clear_on_read_data_present = Element('ns1:clearOnReadDataPresent')
+    clear_on_read_data_present.text = 'false'
+    change_session_return.append(clear_on_read_data_present)
+
+    change_session_response.append(change_session_return)
+    return envelope_soap_body(change_session_response)
+
+
 def redis_create_session(replica_set, session_id):
     # Notify the replica_set:sessions key of the new session
     r.lpush(replica_set + ':sessions', session_id)
 
 
-def redis_session_add_attribute(session_id, data_class, session_data):
+def redis_session_add_or_modify_attribute(session_id, data_class, session_data):
     # This adds credential data to the given attribute (or data_class)
     redis_key = session_id + ':' + data_class
     debug_message('adding redis session key: ' + redis_key)

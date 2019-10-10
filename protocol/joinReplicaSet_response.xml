@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Body>
+    <ns1:joinReplicaSetResponse xmlns:ns1="http://sms.am.tivoli.com">
+      <ns1:joinReplicaSetReturn>
+        <ns1:result>952467756</ns1:result>
+        <ns1:currentKey>iuhew9873hkediuyer987</ns1:currentKey>
+        <ns1:oldKey>iuhew9873hkediuyer987</ns1:oldKey>
+        <ns1:currentKeyID>0</ns1:currentKeyID>
+        <ns1:oldKeyID>0</ns1:oldKeyID>
+        <ns1:currentKeyAge>-1</ns1:currentKeyAge>
+      </ns1:joinReplicaSetReturn>
+    </ns1:joinReplicaSetResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

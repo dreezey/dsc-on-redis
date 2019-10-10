@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Body>
+    <ns1:getRealmNameResponse xmlns:ns1="http://sms.am.tivoli.com">
+      <ns1:getRealmNameReturn>
+        <ns1:result>952467756</ns1:result>
+        <ns1:realm>ISAM-Distributed-Session-Cache</ns1:realm>
+      </ns1:getRealmNameReturn>
+    </ns1:getRealmNameResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

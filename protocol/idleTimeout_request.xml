@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Body>
+    <ns1:idleTimeout xmlns:ns1="http://sms.am.tivoli.com">
+      <ns1:replica>dsc2-webseald-testisam</ns1:replica>
+      <ns1:replicaSet>default</ns1:replicaSet>
+      <ns1:sessionID>26o6WQwFZC4F6tfVpuIP8K+FLuZLjpfdd5Ilg3WTGLvNgcGtoAU=</ns1:sessionID>
+    </ns1:idleTimeout>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Body>
+    <ns1:execute xmlns:ns1="http://admin.sms.am.tivoli.com">
+      <ns1:request>listSessions</ns1:request>
+      <ns1:inAttrs>
+        <ns1:attributes>
+          <ns1:name>SessionDataClass</ns1:name>
+          <ns1:values>com.tivoli.am.sms.concurrent-session-key-class</ns1:values>
+        </ns1:attributes>
+        <ns1:attributes>
+          <ns1:name>SessionDataInstance</ns1:name>
+          <ns1:values>sms</ns1:values>
+        </ns1:attributes>
+        <ns1:attributes>
+          <ns1:name>ReplicaSet</ns1:name>
+          <ns1:values>default</ns1:values>
+        </ns1:attributes>
+        <ns1:attributes>
+          <ns1:name>SessionDataValue</ns1:name>
+          <ns1:values>*</ns1:values>
+        </ns1:attributes>
+        <ns1:attributes>
+          <ns1:name>MaxResults</ns1:name>
+          <ns1:values>0x1</ns1:values>
+        </ns1:attributes>
+        <ns1:attributes>
+          <ns1:name>Version</ns1:name>
+          <ns1:values>6.0.0.0</ns1:values>
+        </ns1:attributes>
+      </ns1:inAttrs>
+    </ns1:execute>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

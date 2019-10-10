@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Body>
+    <ns1:getUpdates xmlns:ns1="http://sms.am.tivoli.com">
+      <ns1:replica>dsc-webseald-testisam</ns1:replica>
+      <ns1:instance>e1cbcdd6-d46b-11e9-9e4d-000c2974ca3a:dsc-webseald-testisam</ns1:instance>
+      <ns1:replicaSet xsi:nil="true">
+      </ns1:replicaSet>
+      <ns1:responseBy>60</ns1:responseBy>
+    </ns1:getUpdates>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

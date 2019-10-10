@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:Envelope xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://sms.am.tivoli.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ns0:Body>
+    <ns1:getSession>
+      <ns1:replica>dsc2-webseald-testisam</ns1:replica>
+      <ns1:replicaSet>default</ns1:replicaSet>
+      <ns1:sessionID>6c4QCnPAKRTW1R6fgV0uY1vf+tivJkww2sV6zeQbJl+A1+0Eg+Y=</ns1:sessionID>
+      <ns1:ssoType>local</ns1:ssoType>
+      <ns1:ssoSource xsi:nil="true" />
+    </ns1:getSession>
+  </ns0:Body>
+</ns0:Envelope>

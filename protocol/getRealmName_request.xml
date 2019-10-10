@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Body>
+    <ns1:getRealmName xmlns:ns1="http://sms.am.tivoli.com">
+      <ns1:replica>dsc-webseald-testisam</ns1:replica>
+      <ns1:replicaSet>default</ns1:replicaSet>
+    </ns1:getRealmName>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

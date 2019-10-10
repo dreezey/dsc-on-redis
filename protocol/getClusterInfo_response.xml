@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Body>
+    <ns1:executeResponse xmlns:ns1="http://admin.sms.am.tivoli.com">
+      <ns1:executeReturn>
+        <ns1:outAttrs>
+          <ns1:attributes>
+            <ns1:name>SessionRealm</ns1:name>
+            <ns1:values>ISAM-Distributed-Session-Cache</ns1:values>
+          </ns1:attributes>
+          <ns1:attributes>
+            <ns1:name>ReplicaSet</ns1:name>
+            <ns1:values>default</ns1:values>
+          </ns1:attributes>
+        </ns1:outAttrs>
+        <ns1:outAttrs>
+          <ns1:attributes>
+            <ns1:name>KeyId</ns1:name>
+            <ns1:values>0</ns1:values>
+          </ns1:attributes>
+          <ns1:attributes>
+            <ns1:name>KeyCreationTime</ns1:name>
+            <ns1:values>1568189557</ns1:values>
+          </ns1:attributes>
+          <ns1:attributes>
+            <ns1:name>KeyExpiryTime</ns1:name>
+            <ns1:values>1568189557</ns1:values>
+          </ns1:attributes>
+        </ns1:outAttrs>
+        <ns1:result>952467756</ns1:result>
+      </ns1:executeReturn>
+    </ns1:executeResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

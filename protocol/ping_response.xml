@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Body>
+    <ns1:pingResponse xmlns:ns1="http://sms.am.tivoli.com">
+      <ns1:pingReturn>952467756</ns1:pingReturn>
+    </ns1:pingResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

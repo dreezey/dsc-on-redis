@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Body>
+    <ns1:getUpdatesResponse xmlns:ns1="http://sms.am.tivoli.com">
+      <ns1:getUpdatesReturn>
+        <ns1:result>952467756</ns1:result>
+        <ns1:newKey>iuhew9873hkediuyer987</ns1:newKey>
+        <ns1:newKeyID>0</ns1:newKeyID>
+      </ns1:getUpdatesReturn>
+    </ns1:getUpdatesResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

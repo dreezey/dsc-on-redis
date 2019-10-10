@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SOAP-ENV:Body>
+    <ns1:terminateSessionResponse xmlns:ns1="http://sms.am.tivoli.com">
+      <ns1:terminateSessionReturn>
+        <ns1:result>952467756</ns1:result>
+        <ns1:version>0</ns1:version>
+        <ns1:stackDepth>0</ns1:stackDepth>
+        <ns1:clearOnReadDataPresent>false</ns1:clearOnReadDataPresent>
+      </ns1:terminateSessionReturn>
+    </ns1:terminateSessionResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

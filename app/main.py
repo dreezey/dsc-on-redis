@@ -34,41 +34,44 @@ def dsess_runtime():
     body = root[0]
     action = body[0]
     debug_message(request.headers)
+    soap_action = str(request.headers['Soapaction']).lower().replace('"', '', 2)
+    debug_message("soapaction: " + soap_action)
 
     response_body = None
-    if '{http://sms.am.tivoli.com}joinReplicaSet' in action.tag:
+    if 'joinReplicaSet'.lower() in soap_action:
         debug_message('join')
         response_body = join_replica_set(action)
-    elif '{http://sms.am.tivoli.com}ping' in action.tag:
+    elif 'ping'.lower() in soap_action:
         debug_message('ping')
         response_body = ping(action)
-    elif '{http://sms.am.tivoli.com}getUpdates' in action.tag:
+    elif 'getUpdates'.lower() in soap_action:
         debug_message('getUpdates')
         response_body = get_updates(action)
-    elif '{http://sms.am.tivoli.com}replicaShutdown' in action.tag:
+    elif 'replicaShutdown'.lower() in soap_action:
         debug_message('replicaShutdown')
         response_body = replica_shutdown(action)
-    elif '{http://sms.am.tivoli.com}getRealmName' in action.tag:
+    elif 'getRealmName'.lower() in soap_action:
         debug_message('getRealmName')
         response_body = get_realm_name(action)
-    elif '{http://sms.am.tivoli.com}createSession' in action.tag:
+    elif 'createSession'.lower() in soap_action:
         debug_message('createSession')
         debug_message(tostring(root))
         response_body = create_session(action)
-    elif '{http://sms.am.tivoli.com}getSession' in action.tag:
+    elif 'getSession'.lower() in soap_action:
         debug_message('getSession')
         debug_message(tostring(root))
         response_body = get_session(action)
-    elif '{http://sms.am.tivoli.com}idleTimeout' in action.tag:
+    elif 'idleTimeout'.lower() in soap_action:
         debug_message('idleTimeout')
         debug_message(tostring(root))
         response_body = idle_timeout(action)
-    elif '{http://sms.am.tivoli.com}terminateSession' in action.tag:
+    elif 'terminateSession'.lower() in soap_action:
         debug_message('terminateSession')
         debug_message(tostring(root))
         response_body = terminate_session(action)
     else:
-        debug_message(action.tag)
+        debug_message("Unknown operation: " + soap_action)
+        # debug_message(action.tag)
 
     resp = Response()
     resp.data = minidom.parseString(
